@@ -30,10 +30,7 @@ Template.body.helpers({
       threshold: 3,
       search: (str) => {
         let results = Tasks.find({text: {$regex: str+'.*', $options: 'i'}});
-        
-        console.debug('parent#search', results.count());
-
-        return ['some', 'string', 'results'];
+        return results.map(item => item.text);
       },
     };
   }
