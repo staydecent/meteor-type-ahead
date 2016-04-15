@@ -29,7 +29,10 @@ Template.body.helpers({
     return {
       threshold: 3,
       search: (str) => {
-        console.debug('parent#search', str);
+        let results = Tasks.find({text: {$regex: str+'.*', $options: 'i'}});
+        
+        console.debug('parent#search', results.count());
+
         return ['some', 'string', 'results'];
       },
     };
