@@ -43,6 +43,22 @@ h1 {
   margin-right: 1em;
 }
 
+.type-ahead-holder {
+
+}
+
+.type-ahead-list {
+  display: none;
+}
+
+.type-ahead-suggestions-visible .type-ahead-list {
+  display: block;
+}
+
+.type-ahead-list-item.active {
+  background-color: yellow;
+}
+
 form {
   margin-top: 10px;
   margin-bottom: -10px;

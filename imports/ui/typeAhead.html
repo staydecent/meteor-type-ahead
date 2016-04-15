@@ -1,5 +1,11 @@
 <template name="typeAhead">
-  <form class="type-ahead">
-    <input type="text" class="search" name="search" placeholder="Search your tasks.." />
-  </form>
+  <div class="type-ahead-holder {{visibleClass}}">
+    <input type="text" class="type-ahead-input" name="search" placeholder="{{getState 'placeholder'}}" />
+
+    <ul class="type-ahead-list">
+    {{#each getState 'suggestions'}}
+      <li class="type-ahead-list-item {{activeItemClass @index}}">{{this}}</li>
+    {{/each}}
+    </ul>
+  </div>
 </template>

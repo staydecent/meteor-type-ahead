@@ -25,6 +25,15 @@ Template.body.helpers({
   incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
   },
+  typeAheadArgs() {
+    return {
+      threshold: 3,
+      search: (str) => {
+        console.debug('parent#search', str);
+        return ['some', 'string', 'results'];
+      },
+    };
+  }
 });
 
 Template.body.events({
